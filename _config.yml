@@ -25,8 +25,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://redrebel.github.io/jekyll-blog
-
+production_url : http://redrebel.github.io/jekyll-blog2
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
@@ -133,3 +132,5 @@ JB :
   # where [HELPER] is the name of the helper you are overriding.
   
 paginate : 3
+#
+#baseurl: /jekyll-blog
