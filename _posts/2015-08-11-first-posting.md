@@ -6,4 +6,4 @@ category:
 tags: []
 ---
 
-my first posting 
+my first posting !
