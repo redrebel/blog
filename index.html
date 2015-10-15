@@ -1,6 +1,5 @@
 ---
 layout: page
-title: 빨강토끼의 블로그
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -8,17 +7,67 @@ title: 빨강토끼의 블로그
 
 
     <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 {% include JB/setup %}
 
 <ul class="posts">
-  {% for post in site.posts %}
-  <li><span>{{post.date | date_to_string }}</span> - <a href="{{BASE_PATH }}{{post.url}}">{{post.title}}</a></li>
+  {% for post in paginator.posts %}
+  <li><span>{{post.date | date_to_string }}</span> - <a href="{{BASE_PATH }}{{post.url}}">{{post.title}}</a>
+  <p>{{ post.content | truncate: 1500 }}}</p>
+  </li>
   {% endfor %}
 </ul>
 
+
+<div class="pagination">
+  <ul>
+{% if paginator.previous_page %}
+    <li>
+  {% if paginator.previous_page == 1 %}
+      <a href="{{ BASE_PATH }}/">&laquo;</a>
+  {% else %}
+      <a href="{{ BASE_PATH }}/page{{paginator.previous_page}}">&laquo;</a>
+  {% endif %}
+    </li>
+{% else %}
+    <li class="disabled">
+      <a href="#">&laquo;</a>
+    </li>
+{% endif %}
+
+{% if paginator.page == 1 %}
+    <li class="active">
+      <a href="#">1</a>
+    </li>
+{% else %}
+    <li>
+      <a href="{{ BASE_PATH }}/">1</a>
+    </li>
+{% endif %}
+
+{% for count in (2..paginator.total_pages) %}
+  {% if count == paginator.page %}
+    <li class="active">
+      <a href="#">{{count}}</a>
+    </li>
+  {% else %}
+    <li>
+      <a href="{{ BASE_PATH }}/page{{count}}">{{count}}</a>
+    </li>
+  {% endif %}
+{% endfor %}
+
+{% if paginator.next_page %}
+    <li>
+      <a href="{{ BASE_PATH }}/page{{paginator.next_page}}">&raquo;</a>
+    </li>
+{% else %}
+    <li class="disabled">
+      <a href="#">&raquo;</a>
+    </li>
+{% endif %}
+  </ul>
+</div>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/redrebel/jekyll-blog">Jekyll-blog</a> is maintained by <a href="https://github.com/redrebel">redrebel</a>.</span>
 

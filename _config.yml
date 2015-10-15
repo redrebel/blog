@@ -25,7 +25,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://redrebel.github.io/jekyll-blog
+production_url : http://redrebel.github.io/blog
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
@@ -53,7 +53,7 @@ JB :
   #   - Only the following values are falsy: ["", null, false]
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : /jekyll-blog
+  BASE_PATH : /blog
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -131,6 +131,6 @@ JB :
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
   
-paginate : 3
+paginate : 1
 #
 #baseurl: /jekyll-blog
